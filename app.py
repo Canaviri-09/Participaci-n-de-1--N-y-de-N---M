@@ -68,7 +68,7 @@ def init_db():
         db.create_all()
         print("\nBase de datos creada satisfactoriamente")
 
-def insert_data():
+def insertar_datos():
     with app.app_context():
        
         # Creacion de autores
@@ -102,7 +102,7 @@ def insert_data():
         db.session.commit()
         print("\nDatos insertados satisfactoriamente")
         
-def query_data():
+def consultar_datos():
     with app.app_context():
         
         print("\n Listado de Autores y sus libros:")
@@ -126,7 +126,7 @@ def query_data():
             else:
                 print("No hay libros registrados para este género")
                 
-def update_data():
+def actualizar_datos():
     with app.app_context():
         print("\n Actualizando el título del libro con id=4")
         libro = Libro.query.filter_by(id=4).first()
@@ -140,7 +140,7 @@ def update_data():
         else:
             print("Libro no encontrado")
             
-def delete_data():
+def eliminar_datos():
     with app.app_context():
         print("\n Eliminando un autor con id=3")
         
@@ -153,10 +153,10 @@ def delete_data():
             print("Autor no encontrado")
             
 if __name__ == '__main__':
-    #init_db()
-    #insert_data()
-    #query_data()
-    #update_data()
-    #query_data()
-    delete_data()
-    query_data()
+    init_db()
+    insertar_datos()
+    consultar_datos()
+    actualizar_datos()
+    consultar_datos()
+    eliminar_datos()
+    consultar_datos()
